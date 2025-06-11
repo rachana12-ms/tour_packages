@@ -1,0 +1,130 @@
+### Create a new tour package
+POST http://localhost:8087/api/tour-packages
+Authorization: Basic rachana:rach
+Content-Type: application/json
+
+{
+  "destination": " ",
+  "duration": 5,
+  "price": 1500,
+  "description": "Romantic trip",
+  "itinerary": "Day 1: Eifel Tower..."
+}
+### Create a new tour package - London
+POST http://localhost:8087/api/tour-packages
+Authorization: Basic rishitha:rish
+Content-Type: application/json
+
+{
+  "destination": "London",
+  "duration": 7,
+  "price": 1500,
+  "description": "Explore historic London",
+  "itinerary": "Day 1: Buckingham Palace..."
+}
+
+###
+
+### Create a new tour package - Tokyo
+POST http://localhost:8087/api/tour-packages
+Authorization: Basic rachana:rach
+Content-Type: application/json
+
+{
+  "destination": "Tokyo",
+  "duration": 6,
+  "price": 1800,
+  "description": "Experience the vibrant city of Tokyo",
+  "itinerary": "Day 1: Shibuya Crossing..."
+}
+
+###
+
+### Create a new tour package - New York
+POST http://localhost:8087/api/tour-packages
+Authorization: Basic rakshitha:raksh
+Content-Type: application/json
+
+{
+  "destination": "New York",
+  "duration": 4,
+  "price": 1400,
+  "description": "Visit the Big Apple",
+  "itinerary": "Day 1: Times Square..."
+}
+
+###
+
+### Create a new tour package - Sydney
+POST http://localhost:8087/api/tour-packages
+Authorization: Basic rachana:rach
+Content-Type: application/json
+
+{
+  "destination": "Sydney",
+  "duration": 8,
+  "price": 2000,
+  "description": "Discover Sydney's beaches and landmarks",
+  "itinerary": "Day 1: Opera House..."
+}
+###
+
+### Get all tour packages
+GET http://localhost:8087/api/tour-packages
+Authorization: Basic manvitha:manv
+
+
+###
+### Get tour package by ID
+GET http://localhost:8087/api/tour-packages/8
+Authorization: Basic rachana:rach
+
+
+### Get by destination
+GET http://localhost:8087/api/tour-packages/destination/paris
+Authorization: Basic rachana:rach
+
+###
+
+### Filter by price range
+GET http://localhost:8087/api/tour-packages/filter/price?minPrice=1000&maxPrice=1500
+Authorization: Basic kavya:kav
+
+###
+
+### Filter by duration range
+GET http://localhost:8087/api/tour-packages/filter/duration?min=4&max=7
+Authorization: Basic kavya:kav
+
+###
+
+### Search by keyword in destination or description
+GET http://localhost:8087/api/tour-packages/search/keyword?keyword=trip
+Authorization: Basic kavya:kav
+
+###
+
+### Filter by destination and price
+GET http://localhost:8087/api/tour-packages/filter?destination=London&maxPrice=1500
+Authorization: Basic kavya:kav
+
+###
+
+### Update a tour package (replace 1 with actual ID)
+PUT http://localhost:8087/api/tour-packages/6
+Authorization: Basic rachana:rach
+Content-Type: application/json
+
+{
+  "destination": "rachanaland",
+  "duration": 7,
+  "price": 1500,
+  "description": "Updated trip",
+  "itinerary": "Day 1: Arrival..."
+}
+
+###
+
+### Delete a tour package (replace 1 with actual ID)
+DELETE http://localhost:8087/api/tour-packages/19
+Authorization: Basic manvitha:manv

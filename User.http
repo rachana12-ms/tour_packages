@@ -1,0 +1,31 @@
+
+### Register admin user
+POST http://localhost:8087/api/users/
+Content-Type: application/json
+
+{
+  "username": "rachana",
+  "password": "rach",
+  "fullName": "Admin User",
+  "role": "admin"
+}
+
+###
+
+### Register customer user
+POST http://localhost:8087/api/users/
+Content-Type: application/json
+
+{
+  "username": "manvitha",
+  "password": "manv",
+  "fullName": "Customer User",
+  "role": "customer"
+}
+
+### Delete 
+DELETE http://localhost:8087/api/users/rishitha
+Authorization: Basic manvitha:manv
+###
+
+     
