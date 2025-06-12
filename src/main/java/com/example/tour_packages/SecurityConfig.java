@@ -44,4 +44,4 @@ public class SecurityConfig {
         httpSecurity.httpBasic(Customizer.withDefaults());
         return httpSecurity.build();
     }
-}
+}  

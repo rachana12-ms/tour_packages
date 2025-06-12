@@ -52,7 +52,7 @@ public class TourPackageController {
         return service.getAllPackages();
     }
     
-    @PreAuthorize("hasAuthority('admin')")
+    @PreAuthorize("hasAnyAuthority('admin', 'customer')")
     @GetMapping("/{id}")
     public ResponseEntity<?> getTourPackageById(@PathVariable Long id) {
         if (id == null || id <= 0) {

@@ -1,0 +1,318 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd 0%, #fffde4 100%);
+  color: #333;
+  min-height: 100vh;
+}
+a {
+  color: #1976d2;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation Bar */
+nav {
+  background: #1565c0;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+nav h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Poppins', sans-serif;
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+.nav-links button {
+  background: #fff;
+  color: #1565c0;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+}
+.nav-links button:hover {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+/* Hero/Landing Section */
+.hero {
+  background: linear-gradient(rgba(25,118,210,0.7),rgba(25,118,210,0.3)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 24px rgba(25,118,210,0.10);
+}
+.hero h1 {
+  font-size: 2.8rem;
+  font-family: 'Poppins',sans-serif;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.hero button {
+  margin: 0 0.5rem;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  border: none;
+  background: #fff;
+  color: #1976d2;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.hero button:hover {
+  background: #1976d2;
+  color: #fff;
+}
+
+/* Container & Sections */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 2rem;
+}
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Login & Register Forms */
+.auth-box {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #e3f2fd;
+  padding: 2rem 2rem 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(25,118,210,0.08);
+}
+.auth-box h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1976d2;
+}
+.auth-box input, .auth-box select, .auth-box button {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #bdbdbd;
+  font-size: 1rem;
+}
+.auth-box button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+.auth-box button:hover {
+  background: #125aa1;
+}
+.error-msg {
+  color: #e53935;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Dashboard Welcome */
+#welcome-msg {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1976d2;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Tour List Cards */
+#tour-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.tour-card {
+  background: #fff8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tour-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(25, 118, 210, 0.18);
+  background: #fffde7;
+}
+.tour-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+.tour-card b {
+  display: block;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-top: 0.5rem;
+}
+.tour-card div {
+  margin: 0.2rem 0;
+}
+
+/* Tour Details Modal */
+.tour-details {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f0f4c3;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(25,118,210,0.07);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.tour-details img {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+/* Filter & Search Bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.filter-bar input {
+  flex: 1;
+  min-width: 150px;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #bdbdbd;
+  font-size: 1rem;
+}
+.filter-bar button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.filter-bar button:hover {
+  background: #125aa1;
+}
+
+/* Admin Actions */
+#admin-actions {
+  margin-top: 2.5rem;
+  background: #e3f2fd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(25,118,210,0.07);
+}
+#admin-actions h2 {
+  color: #1976d2;
+  margin-bottom: 1rem;
+}
+#admin-actions form input, #admin-actions form textarea {
+  margin-bottom: 0.7rem;
+}
+
+/* Footer */
+footer {
+  background: #263238;
+  color: #cfd8dc;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 3rem;
+  border-radius: 0 0 16px 16px;
+}
+footer a {
+  color: #90caf9;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* About & Contact Sections */
+#about-section, #contact-section {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(25,118,210,0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .container {
+    padding: 1rem;
+  }
+  #tour-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  nav h1 {
+    font-size: 1.2rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .container {
+    padding: 0.5rem;
+  }
+  #tour-list {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+}

@@ -4,7 +4,7 @@ Authorization: Basic rachana:rach
 Content-Type: application/json
 
 {
-  "destination": " ",
+  "destination": "Paris",
   "duration": 5,
   "price": 1500,
   "description": "Romantic trip",
@@ -76,7 +76,7 @@ Authorization: Basic manvitha:manv
 
 ###
 ### Get tour package by ID
-GET http://localhost:8087/api/tour-packages/8
+GET http://localhost:8087/api/tour-packages/1
 Authorization: Basic rachana:rach
 
 

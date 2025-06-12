@@ -24,6 +24,17 @@ public class UserApi {
         return userService.newUser(user);
     }
     
+    @GetMapping("/{username}")
+    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
+    User user = userService.findByUsername(username);
+    if (user != null) {
+        user.setPassword(null); // Don't expose password
+        return ResponseEntity.ok(user);
+    } else {
+        return ResponseEntity.notFound().build();
+    }
+}
+    
     @Transactional
     @PreAuthorize("hasAuthority('admin')")
     @DeleteMapping("/{username}")
