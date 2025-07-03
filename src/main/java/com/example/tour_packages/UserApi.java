@@ -5,6 +5,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -20,11 +21,14 @@ public class UserApi {
 
     // SignUp
     @PostMapping("/")
-    public User createNewUser(@RequestBody User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return userService.newUser(user);
+    public ResponseEntity<?> createNewUser(@RequestBody User user) {
+    if (userService.emailExists(user.getEmail())) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("Email already in use");
     }
-    
+    user.setPassword(passwordEncoder.encode(user.getPassword()));
+    return ResponseEntity.ok(userService.newUser(user));
+}
+
     @GetMapping("/{username}")
     public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
     User user = userService.findByUsername(username);

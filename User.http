@@ -4,8 +4,8 @@ POST http://localhost:8087/api/users/
 Content-Type: application/json
 
 {
-  "username": "aaa",
-  "password": "aa",
+  "username": "rachana",
+  "password": "rach",
   "fullName": "Admin User",
   "role": "admin"
 }
@@ -17,8 +17,8 @@ POST http://localhost:8087/api/users/
 Content-Type: application/json
 
 {
-  "username": "bbb",
-  "password": "bb",
+  "username": "manvitha",
+  "password": "manv",
   "fullName": "Customer User",
   "role": "customer"
 }

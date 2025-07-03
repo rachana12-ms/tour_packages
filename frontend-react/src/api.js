@@ -1,4 +1,3 @@
-// src/api.js
 import axios from "axios";
 
 const getAuthHeader = () => {
@@ -11,6 +10,7 @@ const getAuthHeader = () => {
 
 const api = axios.create({
   baseURL: "http://localhost:8087/api",
+    withCredentials: true, // ✅ This line is IMPORTANT
 });
 
 api.interceptors.request.use(config => {

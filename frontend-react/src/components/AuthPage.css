@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.auth-wrapper {
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Prevents box overflow on small screens */
+}
+
+.welcome {
+  color: white;
+  text-shadow: 1px 1px 4px #000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.welcome h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.welcome p {
+  font-size: 1.2em;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.auth-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box; /* ✅ Ensures accurate width */
+  margin: 0 auto; /* ✅ In case wrapper fails */
+}
+
+
+.auth-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #7c2a2a;
+}
+
+.auth-box input,
+.auth-box select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1.5px solid #bfa14a;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+
+.auth-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #bfa14a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth-box button:hover {
+  background-color: #a57f2e;
+}
+
+.toggle {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.toggle a {
+  color: #7c2a2a;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.message {
+  text-align: center;
+  margin-top: 15px;
+  color: #e74c3c;
+}
+
+footer {
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 15px 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #7c2a2a;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}

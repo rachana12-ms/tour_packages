@@ -18,6 +18,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
+
     @Autowired
     private UserService userService;
 
@@ -28,20 +29,21 @@ public class SecurityConfig {
 
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
-        AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
-        authenticationManagerBuilder.userDetailsService(userService).passwordEncoder(passwordEncoder());
-        return authenticationManagerBuilder.build();
+        AuthenticationManagerBuilder authBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
+        authBuilder.userDetailsService(userService).passwordEncoder(passwordEncoder());
+        return authBuilder.build();
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.csrf(csrf -> csrf.disable());
-        httpSecurity.authorizeHttpRequests(request -> request
-                .requestMatchers("/api/users/").permitAll()
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        return http
+            .csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/users/**").permitAll()
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest().authenticated()
-        );
-        httpSecurity.httpBasic(Customizer.withDefaults());
-        return httpSecurity.build();
+            )
+            .httpBasic(Customizer.withDefaults())
+            .build();
     }
-}  
+}

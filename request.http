@@ -1,72 +1,165 @@
 ### Create a new tour package
 POST http://localhost:8087/api/tour-packages
-Authorization: Basic rachana:rach
+Authorization: Basic kavya:kav
 Content-Type: application/json
 
 {
-  "destination": "Paris",
+  "name": "Kerala Backwaters & Munnar Hills",
+  "destination": "Alleppey Munnar",
   "duration": 5,
-  "price": 1500,
-  "description": "Romantic trip",
-  "itinerary": "Day 1: Eifel Tower..."
+  "price": 18999,
+  "description": "Experience the tranquil backwaters of Alleppey and the lush tea gardens of Munnar with houseboat stays and scenic views.",
+  "itinerary": "Day 1: Arrival in Kochi and transfer to Alleppey\nDay 2: Houseboat cruise in Alleppey backwaters\nDay 3: Drive to Munnar and tea plantation tour\nDay 4: Munnar sightseeing – Mattupetty Dam, Echo Point\nDay 5: Departure",
+  "imageUrls": [
+    "https://upload.wikimedia.org/wikipedia/commons/4/43/Alleppey_Boathouse.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/b/b3/Tea_plantation_in_Munnar.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/0/03/Mattupetty_dam_Munnar_1.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/2/2c/Munnar_Valley.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/a/a0/Kerala_backwaters.jpg"
+  ]
 }
+
+
+
+
 ### Create a new tour package - London
 POST http://localhost:8087/api/tour-packages
-Authorization: Basic rishitha:rish
+Authorization: Basic kavya:kav
 Content-Type: application/json
 
 {
-  "destination": "London",
-  "duration": 7,
-  "price": 1500,
-  "description": "Explore historic London",
-  "itinerary": "Day 1: Buckingham Palace..."
+  "name": "Himalayan Escape: Manali & Solang Valley",
+  "destination": "Manali, Solang Valley",
+  "duration": 5,
+  "price": 20999,
+  "description": "Unwind amidst the snow-capped Himalayas with adventure activities in Solang and scenic exploration in Manali.",
+  "itinerary": "Day 1: Arrival in Manali\nDay 2: Local sightseeing and Mall Road\nDay 3: Excursion to Solang Valley – paragliding & skiing\nDay 4: Visit Hadimba Temple and Vashisht hot springs\nDay 5: Departure",
+  "imageUrls": [
+    "https://images.unsplash.com/photo-1596207491465-9ba099c918d3",
+    "https://images.unsplash.com/photo-1608641501041-d12430bfa59b",
+    "https://images.unsplash.com/photo-1628342331677-f3a63eb877f5",
+    "https://images.unsplash.com/photo-1595835541620-f5e6f00f68d1",
+    "https://images.unsplash.com/photo-1571501679680-de32f1e7aad4"
+  ]
 }
+
+
 
 ###
 
 ### Create a new tour package - Tokyo
 POST http://localhost:8087/api/tour-packages
-Authorization: Basic rachana:rach
+Authorization: Basic kavya:kav
 Content-Type: application/json
 
 {
-  "destination": "Tokyo",
+  "name": "Andaman Island Adventure: Havelock & Neil",
+  "destination": "Havelock, Neil Island",
   "duration": 6,
-  "price": 1800,
-  "description": "Experience the vibrant city of Tokyo",
-  "itinerary": "Day 1: Shibuya Crossing..."
+  "price": 25999,
+  "description": "Explore pristine beaches, coral reefs, and tropical islands of Havelock and Neil in this exotic getaway.",
+  "itinerary": "Day 1: Arrival in Port Blair\nDay 2: Ferry to Havelock Island – Radhanagar Beach\nDay 3: Snorkeling at Elephant Beach\nDay 4: Ferry to Neil Island – Natural Bridge\nDay 5: Return to Port Blair\nDay 6: Departure",
+  "imageUrls": [
+    "https://images.unsplash.com/photo-1588776814546-f3c63e2752f7",
+    "https://images.unsplash.com/photo-1547721064-da6cfb341d50",
+    "https://images.unsplash.com/photo-1590402494680-03b58e6c07df",
+    "https://images.unsplash.com/photo-1581873372796-f8aee49ed0c8",
+    "https://images.unsplash.com/photo-1600741071522-796e7c7e2b71"
+  ]
 }
+
+### Create a new tour package - Tokyo
+POST http://localhost:8087/api/tour-packages
+Authorization: Basic kavya:kav
+Content-Type: application/json
+
+{
+  "name": "Royal Rajasthan: Jaipur & Udaipur",
+  "destination": "Jaipur, Udaipur",
+  "duration": 5,
+  "price": 17999,
+  "description": "Dive into the grandeur of forts, palaces, and lakes in Rajasthan's most regal cities: Jaipur and Udaipur.",
+  "itinerary": "Day 1: Arrival in Jaipur – Amber Fort\nDay 2: Hawa Mahal, Jantar Mantar & local bazaars\nDay 3: Travel to Udaipur – City Palace visit\nDay 4: Boat ride on Lake Pichola & Jag Mandir\nDay 5: Departure",
+  "imageUrls": [
+    "https://images.unsplash.com/photo-1600334129128-2c8d15a062ae",
+    "https://images.unsplash.com/photo-1572867438288-ef6b1d2a93bb",
+    "https://images.unsplash.com/photo-1598682373484-89e1742b91f1",
+    "https://images.unsplash.com/photo-1605261186160-16b2b1c4bc6e",
+    "https://images.unsplash.com/photo-1630428030690-40314a5668a4"
+  ]
+}
+
+
+
+### Create a new tour package - Tokyo
+POST http://localhost:8087/api/tour-packages
+Authorization: Basic kavya:kav
+Content-Type: application/json
+
+{
+  "name": "Coastal Karnataka: Gokarna & Murudeshwar",
+  "destination": "Gokarna, Murudeshwar",
+  "duration": 4,
+  "price": 13999,
+  "description": "Enjoy a spiritual and beach-filled escape across the lesser-known gems of Karnataka’s coastline.",
+  "itinerary": "Day 1: Arrival in Gokarna – Om Beach & Kudle\nDay 2: Beach hopping and local temple visit\nDay 3: Travel to Murudeshwar – Shiva Statue, snorkeling\nDay 4: Departure",
+  "imageUrls": [
+    "https://images.unsplash.com/photo-1625565337685-7927e598c7e3",
+    "https://images.unsplash.com/photo-1572287049646-66fe70df2de7",
+    "https://images.unsplash.com/photo-1633957593027-6bde1a3000d4",
+    "https://images.unsplash.com/photo-1630318180492-c68dd42f5974",
+    "https://images.unsplash.com/photo-1633957593134-03cfcab46000"
+  ]
+}
+
 
 ###
 
 ### Create a new tour package - New York
 POST http://localhost:8087/api/tour-packages
-Authorization: Basic rakshitha:raksh
+Authorization: Basic kavya:kav
 Content-Type: application/json
 
 {
-  "destination": "New York",
-  "duration": 4,
-  "price": 1400,
-  "description": "Visit the Big Apple",
-  "itinerary": "Day 1: Times Square..."
+  "name": "Spiritual Varanasi & Sarnath Journey",
+  "destination": "Varanasi, Sarnath",
+  "duration": 3,
+  "price": 9999,
+  "description": "Witness ancient traditions, Ganga aarti, and Buddhist heritage in India’s oldest spiritual centers.",
+  "itinerary": "Day 1: Arrival in Varanasi – Ganga aarti\nDay 2: Kashi Vishwanath Temple & boat ride\nDay 3: Day trip to Sarnath – Dhamek Stupa, return",
+  "imageUrls": [
+    "https://images.unsplash.com/photo-1586007131431-942fc85a58a6",
+    "https://images.unsplash.com/photo-1621400709671-08d8cb4b4e65",
+    "https://images.unsplash.com/photo-1608735401608-b80d728d05dc",
+    "https://images.unsplash.com/photo-1602240877400-3b85bba7997c",
+    "https://images.unsplash.com/photo-1608120958744-dfcf3a9b6eb0"
+  ]
 }
+
+
 
 ###
 
 ### Create a new tour package - Sydney
 POST http://localhost:8087/api/tour-packages
-Authorization: Basic rachana:rach
+Authorization: Basic kavya:kav
 Content-Type: application/json
-
 {
-  "destination": "Sydney",
-  "duration": 8,
-  "price": 2000,
-  "description": "Discover Sydney's beaches and landmarks",
-  "itinerary": "Day 1: Opera House..."
+  "name": "Desert Dreams: Jaisalmer & Sam Dunes",
+  "destination": "Jaisalmer, Sam Sand Dunes",
+  "duration": 4,
+  "price": 16999,
+  "description": "Explore the golden city of Jaisalmer and spend a night under the stars in the magical Sam sand dunes with camel rides and folk music.",
+  "itinerary": "Day 1: Arrival in Jaisalmer – Golden Fort & Havelis\nDay 2: Patwon Ki Haveli, Gadisar Lake\nDay 3: Travel to Sam Dunes – camel safari & cultural camp\nDay 4: Return and departure",
+  "imageUrls": [
+    "https://images.unsplash.com/photo-1616927239071-31276f7d0e4e",  // Jaisalmer Fort
+    "https://images.unsplash.com/photo-1609146475073-1716e7e6168a",  // Desert landscape
+    "https://images.unsplash.com/photo-1618588507080-44d94c065691",  // Camel safari
+    "https://images.unsplash.com/photo-1625251354250-9e9a73df6d65",  // Cultural dance
+    "https://images.unsplash.com/photo-1622636604985-94d3b63d448d"   // Campfire in Sam Dunes
+  ]
 }
+
 ###
 
 ### Get all tour packages

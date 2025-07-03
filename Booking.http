@@ -1,0 +1,22 @@
+### Create a new booking
+POST http://localhost:8087/api/bookings
+Content-Type: application/json
+Authorization: Basic kavya:kav
+
+{
+  "name": "racha",
+  "email": "ravi@example.com",
+  "travelers": 3,
+  "phoneNumber": "9876543210",
+  "bookingDate": "2025-07-05",
+  "selectedPackage": "Honeymoon Getaway",
+  "packageId": 1
+}
+
+### Get all bookings
+GET http://localhost:8087/api/bookings
+Authorization: Basic rachana:rach
+
+### Delete a booking by ID
+DELETE http://localhost:8087/api/bookings/1
+Authorization: Basic rachana:rach

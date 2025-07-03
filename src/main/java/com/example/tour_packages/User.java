@@ -1,5 +1,6 @@
 package com.example.tour_packages;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,8 +14,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -39,22 +40,42 @@ public class User implements UserDetails {
     @NotBlank(message = "Role is required")
     private String role;
 
+    @Column(unique = true)
+    @NotBlank(message = "Email is required")
+    private String email;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority(role));
-        return authorities;
+        return List.of(new SimpleGrantedAuthority(role));
     }
 
     @Override
-    public boolean isAccountNonExpired() { return true; }
+    public String getUsername() {
+        return username;
+    }
 
     @Override
-    public boolean isAccountNonLocked() { return true; }
+    public String getPassword() {
+        return password;
+    }
 
     @Override
-    public boolean isCredentialsNonExpired() { return true; }
+    public boolean isAccountNonExpired() {
+        return true;
+    }
 
     @Override
-    public boolean isEnabled() { return true; }
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }

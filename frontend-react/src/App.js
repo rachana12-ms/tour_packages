@@ -1,60 +1,79 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-
-import Login from "./components/Auth/Login";
-import Register from "./components/Auth/Register";
-import HomePage from "./components/Layout/HomePage";
-import AdminDashboard from "./components/Dashboard/AdminDashboard";
-import CustomerDashboard from "./components/Dashboard/CustomerDashboard";
-import Navbar from "./components/Layout/Navbar";
-import Footer from "./components/Layout/Footer";
-import TourDetails from "./components/Tour/TourDetails";
-
-import "./App.css";
+import './App.css';
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
+import HomeOverlay from "./components/HomeOverlay";
+import CustomerDashboard from "./components/CustomerDashboard";
+import AdminDashboard from "./components/AdminDashboard";
+import BookingPage from './components/BookingPage';
 
 function App() {
-  const username = localStorage.getItem("username");
-  const password = localStorage.getItem("password");
-  const role = (localStorage.getItem("role") || "").toLowerCase();
+  const [user, setUser] = useState(null);
 
-  console.log("role in localStorage:", localStorage.getItem("role")); // <-- Add here
-  const isAuthenticated = !!(username && password);
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   return (
     <Router>
-      <Navbar />
       <Routes>
+        {/* Login */}
         <Route
-          path="/"
+          path="/login"
           element={
-            isAuthenticated
-              ? <Navigate to="/dashboard" />
-              : <HomePage />
+            user ? <Navigate to="/home" /> : <LoginPage setUser={setUser} />
           }
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
 
-        {/* Role-based dashboards */}
+        {/* Register */}
         <Route
-          path="/dashboard"
+          path="/register"
           element={
-            isAuthenticated ? (
-              role === "admin"
-                ? <AdminDashboard username={username} password={password} />
-                : <CustomerDashboard username={username} password={password} />
+            user ? <Navigate to="/home" /> : <RegisterPage setUser={setUser} />
+          }
+        />
+
+        {/* HomeOverlay (choose dashboard) */}
+        <Route
+          path="/home"
+          element={
+            user ? (
+              <HomeOverlay user={user} setUser={setUser} />
             ) : (
               <Navigate to="/login" />
             )
           }
         />
 
-        <Route path="/tour/:id" element={<TourDetails username={username} password={password} />} />
+        {/* Dashboard: Admin or Customer */}
+        <Route
+          path="/dashboard"
+          element={
+            user ? (
+              user.role === "admin" ? (
+                <AdminDashboard user={user} setUser={setUser} />
+              ) : (
+                <CustomerDashboard user={user} setUser={setUser} />
+              )
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
 
-        {/* Default Fallback */}
-        <Route path="*" element={<Navigate to="/" />} />
+        {/* Booking Page (accessible without login for now) */}
+        <Route path="/booking" element={<BookingPage />} />
+
+        {/* Optional: Admin page from "/" */}
+        <Route path="/" element={<Navigate to="/login" />} />
+
+        {/* Fallback 404 */}
+        <Route path="*" element={<h2>404 - Page not found</h2>} />
       </Routes>
-      <Footer />
     </Router>
   );
 }

@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function HomePage() {
+function HomeOverlay({ user, setUser }) {
   const navigate = useNavigate();
 
   return (
-    <div className="homepage">
-      <div className="hero-section">
-        <h1>Welcome to Royal Tours 🌴</h1>
+    <div id="homepage">
+      <div className="home-card">
+        <h1>Welcome to Royal Tours</h1>
         <p>
           Discover and book the most exquisite tour packages across India.<br />
           From royal palaces to serene hills, we curate journeys that create memories for a lifetime.
@@ -26,13 +26,11 @@ function HomePage() {
             Address: 123, Palace Road, Bengaluru, India
           </p>
         </div>
-        <div className="hero-buttons">
-          <button onClick={() => navigate("/login")}>🔐 Login</button>
-          <button onClick={() => navigate("/register")}>📝 Register</button>
-        </div>
+        <button onClick={() => navigate("/dashboard")}>Get Started</button>
+        <button style={{ marginLeft: 10 }} onClick={() => { setUser(null); navigate("/login"); }}>Logout</button>
       </div>
     </div>
   );
 }
 
-export default HomePage;
+export default HomeOverlay;

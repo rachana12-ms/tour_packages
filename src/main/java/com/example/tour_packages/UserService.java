@@ -12,14 +12,22 @@ public class UserService implements UserDetailsService {
     private UserRepository userRepository;
 
 
+
     // User registration
     public User newUser(User user) {
+        if (userRepository.existsByEmail(user.getEmail())) {
+        throw new IllegalArgumentException("Email already in use");
+    }
         return userRepository.save(user);
     }
 
     public User findByUsername(String username) {
     return userRepository.findByUsername(username);
   }
+
+  public boolean emailExists(String email) {
+    return userRepository.existsByEmail(email);
+}
 
     // Delete user by username
     public boolean deleteUserByUsername(String username) {

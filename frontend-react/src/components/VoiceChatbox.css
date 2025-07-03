@@ -1,0 +1,48 @@
+.voice-chatbox {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #f3edfc;
+  border-radius: 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.chat-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #6c3483;
+}
+
+.chat-messages {
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.msg.user {
+  text-align: right;
+  color: #2c3e50;
+}
+
+.msg.bot {
+  text-align: left;
+  color: #6c3483;
+}
+
+.chat-input {
+  display: flex;
+  gap: 5px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 5px;
+}
+
+.chat-input button {
+  padding: 5px 10px;
+}

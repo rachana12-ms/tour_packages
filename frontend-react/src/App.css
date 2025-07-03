@@ -1,136 +1,728 @@
-.tour-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  margin: 1rem;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  max-width: 300px;
+/* Royal Pastel Aesthetic: Ivory, Gold, Maroon, Royal Blue, Pastel Accents */
+body {
+  background: linear-gradient(120deg, #fff8e1 60%, #e0c3fc 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  /* Add a subtle pattern or fallback color */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.tour-image {
+/* Dashboard background image */
+.container {
+  background: rgba(255, 250, 243, 0.25);
+  padding: 2rem 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #b39ddb30, 0 2px 8px #bfa14a20;
+  text-align: auto;
+  max-width: auto;
+  margin: 2rem auto;
+  border: 2px solid #bfa14a;
+  /* Add a royal palace or travel themed background image */
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,250,243,0.92);
+  z-index: 0;
+}
+.container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  background: #fffaf3e6;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  box-shadow: 0 2px 12px #b39ddb40;
+  margin-bottom: 2rem;
+  border-radius: 0 0 18px 18px;
+}
+
+.navbar button {
+  background: linear-gradient(90deg, #bfa14a 60%, #7c2a2a 100%);
+  color: #3a2c0a;
+  font-weight: 700;
+  border: none;
+  border-radius: 7px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #bfa14a30;
+  letter-spacing: 0.5px;
+}
+
+.navbar button:hover {
+  background: linear-gradient(90deg, #7c2a2a 60%, #bfa14a 100%);
+  color: #fff;
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px #bfa14a60;
+}
+
+h2 {
+  color: #7c2a2a;
+  margin-bottom: 1.5rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #bfa14a30;
+}
+
+form, .search-filter {
+  margin-bottom: 1.5rem;
+}
+
+input, button {
+  padding: 0.7rem 1rem;
+  border-radius: 7px;
+  border: 1.5px solid #bfa14a;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+  width: 80%;
+  max-width: 300px;
+  transition: border 0.2s, background 0.2s;
+  background: #fffdf6;
+  color: #7c2a2a;
+}
+
+input:focus {
+  border: 2px solid #7c2a2a;
+  outline: none;
+  background: #fff8e1;
+}
+
+button {
+  background: linear-gradient(90deg, #bfa14a 60%, #7c2a2a 100%);
+  color: #3a2c0a;
+  font-weight: 700;
+  border: none;
+  width: auto;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #7c2a2a 60%, #bfa14a 100%);
+  color: #fff;
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px #bfa14a60;
+}
+
+.package-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.package-card {
+  background: linear-gradient(120deg, #fff8e1 80%, #e0c3fc 100%);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #bfa14a40;
+  padding: 1.2rem 1rem;
+  width: 270px;
+  text-align: left;
+  position: relative;
+  margin-bottom: 1rem;
+  border: 2px solid #bfa14a;
+  transition: box-shadow 0.2s, transform 0.2s, border 0.2s;
+  backdrop-filter: blur(2px);
+}
+.card-with-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.package-card:hover {
+  box-shadow: 0 6px 24px #7c2a2a40;
+  border: 2px solid #7c2a2a;
+  transform: translateY(-4px) scale(1.03);
+}
+
+.package-container h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  color: #7c2a2a;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.package-container .price {
+  color: #bfa14a;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.package-container .destination {
+  color: #3a2c0a;
+  font-weight: 500;
+}
+
+.package-container button {
+  margin-top: 0.5rem;
+  width: 48%;
+  margin-right: 2%;
+  background: linear-gradient(90deg, #7c2a2a 60%, #bfa14a 100%);
+  color: #fff;
+  font-weight: 600;
+}
+
+.package-container button:hover {
+  background: linear-gradient(90deg, #bfa14a 60%, #7c2a2a 100%);
+  color: #3a2c0a;
+}
+
+@media (max-width: 800px) {
+  .container { padding: 1rem 0.5rem; }
+  .package-container { width: 98%; }
+  input { width: 98%; }
+}
+
+
+
+
+/* Homepage overlay styles */
+#homepage {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, #fff8e1 60%, #e0c3fc 100%);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  transition: opacity 0.5s;
+  /* Optional: add a subtle background image for the homepage too */
+  background-image: url('https://th.bing.com/th/id/R.c1fc632260310659b22bf781fb574774?rik=EV%2fVV2%2fLQueqSQ&riu=http%3a%2f%2fblog.photojaanic.com%2fwp-content%2fuploads%2fsites%2f2%2f2017%2f11%2ftravel-photography-tips-photojaanic-7.jpg&ehk=UoEPsSWyaOx91zYapUcdU2Mky%2bJi6N3h01ZjNE5tR6E%3d&risl=&pid=ImgRaw&r=0');
+  background-size: cover;
+  background-position: center;
+}
+
+#homepage .home-card {
+  background: rgba(255,250,243,0.75);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #bfa14a30;
+  padding: 2.5rem 2rem;
+  max-width: 500px;
+  border: 2px solid #bfa14a;
+}
+
+#homepage h1 {
+  color: #7c2a2a;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+#homepage p {
+  color: #3a2c0a;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+#homepage .about, #homepage .contact {
+  margin-bottom: 1.2rem;
+}
+
+#getStartedBtn {
+  background: linear-gradient(90deg, #bfa14a 60%, #7c2a2a 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 7px;
+  padding: 0.8rem 2.2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px #bfa14a30;
+  letter-spacing: 0.5px;
+}
+
+#getStartedBtn:hover {
+  background: linear-gradient(90deg, #7c2a2a 60%, #bfa14a 100%);
+  color: #fff;
+  transform: scale(1.07);
+}
+
+.dashboard-bg-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dashboard-bg-slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: bgFade 18s infinite;
+  transition: opacity 1s;
+}
+
+.dashboard-bg-slideshow img:nth-child(1) { animation-delay: 0s; }
+.dashboard-bg-slideshow img:nth-child(2) { animation-delay: 6s; }
+.dashboard-bg-slideshow img:nth-child(3) { animation-delay: 12s; }
+
+@keyframes bgFade {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  30%  { opacity: 1; }
+  35%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+
+.services-slideshow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: rgba(255, 250, 243, 0.97);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #bfa14a30;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.slideshow-images {
+  width: 320px;
+  height: 180px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px #bfa14a30;
+  border: 2px solid #bfa14a;
+  background: #fff8e1;
+}
+
+.slideshow-images img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s;
+  border-radius: 12px;
+}
+
+.slideshow-images img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.services-info {
+  flex: 1;
+  min-width: 180px;
+  text-align: left;
+}
+
+.services-info h3 {
+  color: #7c2a2a;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+.services-info ul {
+  list-style: disc inside;
+  color: #3a2c0a;
+  font-size: 1.08rem;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+
+.slideshow-images {
+  width: 800px;
+  height: 420px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px #bfa14a30;
+  border: 2px solid #bfa14a;
+  background: #fff8e1;
+}
+
+/* Add as many images as you want in your HTML, CSS will handle them */
+.slideshow-images img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s;
+  border-radius: 16px;
+}
+
+.slideshow-images img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .slideshow-images {
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+/* Remove dashboard-bg-slideshow if you only want the slideshow in the services container */
+.dashboard-bg-slideshow {
+  display: none !important;
+}
+.dashboard-footer {
+  background: rgba(255,250,243,0.97);
+  border-top: 2px solid #bfa14a;
+  margin-top: 2.5rem;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -2px 12px #bfa14a20;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  /* Add a background image */
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,250,243,0.75); 
+  z-index: 0;
+  border-radius: 18px 18px 0 0;
+}
+
+.dashboard-footer > * {
+  position: relative;
+  z-index: 1;
+}
+.package-details-container {
+  background: #fffaf3;
+  border: 2px solid #bfa14a;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #bfa14a30;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  color: #3a2c0a;
+  text-align: left;
+}
+.package-details-container h2 {
+  color: #7c2a2a;
+  margin-bottom: 1rem;
+}
+.package-details-container img {
+  display: block;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  border-radius: 12px;
+  border: 1.5px solid #bfa14a;
+}
+.package-details-container button {
+  margin-top: 1rem;
+  background: #bfa14a;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* Modal for package details */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+
+
+#packageDetails {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  overflow-y: auto;
+  z-index: 1000;
+  display: none; /* hidden by default */
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 40px auto;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-family: Arial, sans-serif;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+}
+
+.images-section {
+  margin-top: 20px;
+}
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.package-image {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+
+.package-card img.slide {
   width: 100%;
   height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.7rem;
+  border: 1.5px solid #bfa14a;
+}
+
+.package-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.package-card {
+  flex: 1 1 300px; /* Flexible layout with a base width */
+  max-width: 320px;
+  min-height: 500px; /* Adjust this value based on your content */
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.package-card:hover {
+  transform: scale(1.02);
+}
+
+.package-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.package-card h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.package-card button {
+  margin-top: auto;
+  padding: 8px 12px;
+  border: none;
+  background-color: #bfa14a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  align-self: flex-start;
+}
+
+.package-card button:hover {
+  background-color: #a38837;
+}
+
+
+.package-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-slider .slide {
+  width: 100%;
+  display: block;
+}
+
+.image-slider .slide:first-child {
+  display: block;
+}
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+.slide-image {
+  width: 100%;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
 }
 
-.tour-content button {
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-  padding: 6px 10px;
-  border: none;
-  border-radius: 5px;
+.mySlides {
+  display: none;
+}
+
+
+
+.prev, .next {
   cursor: pointer;
-}
-
-.edit-button { background: #ffa726; color: white; }
-.delete-button { background: #ef5350; color: white; }
-.book-button { background: #42a5f5; color: white; }
-
-.tour-form {
-  margin: 1rem 0;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-radius: 10px;
-}
-.filter-form {
-  display: grid;
-  gap: 10px;
-  margin: 1rem 0;
-  background: #f0f4f8;
-  padding: 1rem;
-  border-radius: 10px;
-}
-.filter-form input, .filter-form button {
+  position: absolute;
+  top: 40%;
+  width: auto;
   padding: 8px;
-  font-size: 0.9rem;
-}
-.tour-details {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s ease;
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0.6);
 }
 
-.tour-details img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 1rem;
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 
-.tour-details button {
-  padding: 10px 20px;
-  background: #2196f3;
+.prev {
+  left: 5px;
+}
+
+.next {
+  right: 5px;
+}
+
+
+
+
+.booking-form {
+  margin-top: 30px;
+}
+
+.booking-form label {
+  display: block;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+#bookingInfo {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-top: 2px solid #ccc;
+  margin-top: 10px;
+}
+.book-now-btn {
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #7c2a2a 60%, #bfa14a 100%);
   color: white;
   border: none;
-  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  border-radius: 7px;
+  font-weight: bold;
   cursor: pointer;
-}
-.homepage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  /*background-image: url("/background-travel.jpg") no-repeat center center/cover;*/
-  text-align: center;
-  color: white;
+  transition: background 0.3s, transform 0.2s;
 }
 
-.hero-section {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 12px;
+.book-now-btn:hover {
+  background: linear-gradient(90deg, #bfa14a 60%, #7c2a2a 100%);
+  transform: scale(1.05);
 }
-
-.hero-buttons button {
-  margin: 1rem 0.5rem;
-  padding: 10px 20px;
-  border: none;
-  background: #00bcd4;
-  color: white;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  background: #004d40;
-  padding: 1rem 2rem;
-  color: white;
-}
-
-.navbar a {
-  color: white;
-  margin-right: 1rem;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.navbar button {
-  background: #ef5350;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.footer {
-  background: #263238;
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  padding: 1.5rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.footer a {
-  color: #80deea;
-  text-decoration: none;
-  margin: 0 0.3rem;
-}
-
